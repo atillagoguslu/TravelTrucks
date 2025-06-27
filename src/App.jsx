@@ -1,5 +1,6 @@
 import './App.css'
 import { Outlet, NavLink } from 'react-router';
+import logo from './assets/logo.svg';
 
 function App() {
 
@@ -7,8 +8,13 @@ function App() {
     <>
       <div className="container">
         <div className="header">
-          <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
-          <NavLink to="/catalog" className={({ isActive }) => isActive ? 'active' : ''}>Catalog</NavLink>
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
+          <div className="nav">
+            <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+            <NavLink to="/catalog" className={({ isActive }) => isActive ? 'active' : ''}>Catalog</NavLink>
+          </div>
         </div>
         <Outlet />
       </div>
