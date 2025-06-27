@@ -1,5 +1,5 @@
 import './App.css'
-import { Outlet } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router';
 
 function App() {
 
@@ -7,7 +7,8 @@ function App() {
     <>
       <div className="container">
         <div className="header">
-          <h1>Campers</h1>
+          <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+          <NavLink to="/catalog" className={({ isActive }) => isActive ? 'active' : ''}>Catalog</NavLink>
         </div>
         <Outlet />
       </div>
