@@ -2,15 +2,23 @@
   width: 1440px;
   min-height: 500px;
   margin: 0 auto;
-  background-color: var(--color-white);
+  background-color: var(--white);
 }
 
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--inputs);
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--main);
 }
 
 .active {
-  color: var(--color-primary);
+  color: var(--button-hover);
 }

@@ -1,15 +1,16 @@
 :root {
   /* Color Palette */
-  --color-navy: #101828;
-  --color-slate: #475467;
-  --color-gray: #6C717B;
-  --color-red-primary: #E44848;
-  --color-red-secondary: #D84343;
-  --color-yellow: #FFC531;
-  --color-light-gray: #DADDE1;
-  --color-lighter-gray: #F2F4F7;
-  --color-lightest-gray: #F7F7F7;
-  --color-white: #FFFFFF;
+  --main: #101828;
+  --text: #475467;
+  --gray: #6C717B;
+  --button: #E44848;
+  --button-hover: #D84343;
+  --rating: #FFC531;
+  --gray-light: #DADDE1;
+  --badges: #F2F4F7;
+  --inputs: #F7F7F7;
+  --white: #FFFFFF;
 
-  font-family: "Inter", sans-serif;
+  --font-family: "Inter", monospace;
+  font-family: "Inter", monospace;
 }
