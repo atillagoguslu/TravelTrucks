@@ -14,8 +14,6 @@
   border-bottom: 1px solid var(--badges);
   padding: 24px 64px;
   width: calc(1440px - 64px * 2);
-  /* width: 1440px; */
-  /* height: 72px; */
 
   font-family: var(--font-family);
   font-weight: var(--font-weight);
@@ -37,7 +35,6 @@
   display: flex;
   justify-content: space-between;
 
-  /* Remove underline from NavLink */
   text-decoration: none;
 }
 
