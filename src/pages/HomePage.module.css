@@ -1,6 +1,8 @@
 .container {
   width: 1440px;
-  min-height: 500px;
+  height: 690px;
   margin: 0 auto;
-  background-color: var(--color-yellow);
+  /* background-color: var(--rating); */
+
+  background-image: url('../assets/heroBackground.jpg');
 }
