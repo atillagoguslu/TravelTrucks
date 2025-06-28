@@ -6,7 +6,9 @@ const HomePage = () => {
       <div className={styles.heroTitleContainer}>
         <h1 className={styles.heroTitle}>Campers of your dreams</h1>
         <p className={styles.heroDescription}>You can find everything you want in our catalog</p>
-        <button className={styles.heroButton}>View Now</button>
+        <button className={styles.heroButton}>
+          <span className={styles.heroButtonText}>View Now</span>
+        </button>
       </div>
     </div>
   );
