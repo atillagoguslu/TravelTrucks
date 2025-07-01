@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getTrucks } from "./operations.js";
 
 const initialState = {
-  trucks: [],
+  allTrucks: [],
   loadingStates: {
     get: false,
   },
@@ -15,7 +15,7 @@ const trucksSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getTrucks.fulfilled, (state, action) => {
-        state.trucks = action.payload;
+        state.allTrucks = action.payload;
         state.loadingStates.get = false;
         state.error = null;
       })
