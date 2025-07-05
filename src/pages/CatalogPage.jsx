@@ -15,21 +15,17 @@ import { getTrucks } from "../redux/trucks/operations.js";
 const CatalogPage = () => {
   const dispatch = useDispatch();
   
-  // Selectors
   const isLoadingFilters = useSelector(selectIsLoadingFilters);
   const error = useSelector(selectTrucksErrors);
   
-  // Filter info
   const hasActiveFilters = useSelector(selectHasActiveFilters);
   
-  // Load initial data
   useEffect(() => {
     if (!hasActiveFilters) {
       dispatch(getTrucks());
     }
   }, [dispatch, hasActiveFilters]);
   
-  // Render loading state
   if (isLoadingFilters) {
     return (
       <div className={style.container}>
@@ -41,7 +37,6 @@ const CatalogPage = () => {
     );
   }
   
-  // Render error state
   if (error) {
     return (
       <div className={style.container}>

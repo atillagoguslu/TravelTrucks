@@ -5,6 +5,8 @@ export const selectEquipmentFilters = (state) =>
   state.filters.activeFilters.equipment;
 export const selectVehicleType = (state) =>
   state.filters.activeFilters.vehicleType;
+export const selectVehicleTypeFilters = (state) =>
+  state.filters.activeFilters.vehicleTypes;
 
 // Pagination selectors
 export const selectPagination = (state) => state.filters.pagination;
@@ -23,7 +25,7 @@ export const selectHasActiveFilters = (state) => {
   return (
     filters.location.trim() !== "" ||
     filters.equipment.length > 0 ||
-    filters.vehicleType.trim() !== ""
+    filters.vehicleTypes.length > 0
   );
 };
 
@@ -33,7 +35,7 @@ export const selectFilterCount = (state) => {
 
   if (filters.location.trim() !== "") count++;
   if (filters.equipment.length > 0) count += filters.equipment.length;
-  if (filters.vehicleType.trim() !== "") count++;
+  if (filters.vehicleTypes.length > 0) count += filters.vehicleTypes.length;
 
   return count;
 };

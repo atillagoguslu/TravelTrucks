@@ -28,8 +28,10 @@ export const fetchTrucksWithFilters = createAsyncThunk(
       }
 
       // Vehicle type filter
-      if (filters.vehicleType && filters.vehicleType.trim()) {
-        params.append("form", filters.vehicleType);
+      if (filters.vehicleTypes && filters.vehicleTypes.length > 0) {
+        filters.vehicleTypes.forEach((type) => {
+          params.append("form", type);
+        });
       }
 
       const response = await axios.get(`${CAMPERS_URL}?${params.toString()}`, {
@@ -91,8 +93,11 @@ export const buildFilterParams = (filters) => {
     });
   }
 
-  if (filters.vehicleType && filters.vehicleType.trim()) {
-    params.form = filters.vehicleType;
+  if (filters.vehicleTypes && filters.vehicleTypes.length > 0) {
+    filters.vehicleTypes.forEach((type) => {
+      params.form = params.form || [];
+      params.form.push(type);
+    });
   }
 
   return params;

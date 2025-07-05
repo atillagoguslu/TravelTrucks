@@ -5,7 +5,7 @@ const initialState = {
   activeFilters: {
     location: "",
     equipment: [], // Array of equipment IDs/names
-    vehicleType: "", // "van", "fully-integrated", "alcove"
+    vehicleTypes: [], // Array of vehicle types: "panelTruck", "fullyIntegrated", "alcove"
   },
   // Pagination state
   pagination: {
@@ -45,9 +45,18 @@ const filterSlice = createSlice({
       state.isFiltersChanged = true;
     },
 
-    // Vehicle type filter (radio buttons)
-    setVehicleType: (state, action) => {
-      state.activeFilters.vehicleType = action.payload;
+    // Vehicle type filters (checkboxes)
+    addVehicleTypeFilter: (state, action) => {
+      const type = action.payload;
+      if (!state.activeFilters.vehicleTypes.includes(type)) {
+        state.activeFilters.vehicleTypes.push(type);
+        state.isFiltersChanged = true;
+      }
+    },
+    removeVehicleTypeFilter: (state, action) => {
+      const type = action.payload;
+      state.activeFilters.vehicleTypes =
+        state.activeFilters.vehicleTypes.filter((item) => item !== type);
       state.isFiltersChanged = true;
     },
 
@@ -56,7 +65,7 @@ const filterSlice = createSlice({
       state.activeFilters = {
         location: "",
         equipment: [],
-        vehicleType: "",
+        vehicleTypes: [],
       };
       state.pagination.currentPage = 1;
       state.isFiltersChanged = true;
@@ -90,7 +99,8 @@ export const {
   setLocation,
   addEquipmentFilter,
   removeEquipmentFilter,
-  setVehicleType,
+  addVehicleTypeFilter,
+  removeVehicleTypeFilter,
   clearAllFilters,
   setCurrentPage,
   setPaginationData,

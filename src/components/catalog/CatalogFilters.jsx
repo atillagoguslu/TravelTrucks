@@ -1,112 +1,84 @@
 import { useDispatch, useSelector } from "react-redux";
 import style from "./CatalogFilters.module.css"
-
-// Actions
 import {
   setLocation,
   addEquipmentFilter,
   removeEquipmentFilter,
-  setVehicleType,
+  addVehicleTypeFilter,
+  removeVehicleTypeFilter,
   resetPagination,
   markFiltersApplied,
   setPaginationData,
 } from "../../redux/filters/slice.js";
-
-// Selectors
 import {
   selectActiveFilters,
   selectLocation,
   selectEquipmentFilters,
-  selectVehicleType,
+  selectVehicleTypeFilters,
   selectIsFiltersChanged,
   selectHasActiveFilters,
 } from "../../redux/filters/selectors.js";
-
-// Operations
 import { searchTrucksWithFilters } from "../../redux/filters/operations.js";
 import { clearFilteredTrucks } from "../../redux/trucks/slice.js";
 
 const CatalogFilters = () => {
   const dispatch = useDispatch();
-  
-  // Selectors
   const activeFilters = useSelector(selectActiveFilters);
   const location = useSelector(selectLocation);
   const equipmentFilters = useSelector(selectEquipmentFilters);
-  const vehicleType = useSelector(selectVehicleType);
+  const vehicleTypeFilters = useSelector(selectVehicleTypeFilters);
   const isFiltersChanged = useSelector(selectIsFiltersChanged);
   const hasActiveFilters = useSelector(selectHasActiveFilters);
-  
 
-  
-  // Vehicle type options with icons
-  const vehicleTypeOptions = [
-    { id: "panelTruck", label: "Van", icon: "/src/assets/icons/type/van.svg" },
-    { id: "fullyIntegrated", label: "Fully Integrated", icon: "/src/assets/icons/type/fully_integrated.svg" },
-    { id: "alcove", label: "Alcove", icon: "/src/assets/icons/type/alcove.svg" },
-  ];
-  
-  // Handler functions
   const handleLocationChange = (e) => {
     const value = e.target.value;
     dispatch(setLocation(value));
   };
-  
+
   const handleEquipmentToggle = (equipment) => {
     const isSelected = equipmentFilters.includes(equipment);
-    
     if (isSelected) {
       dispatch(removeEquipmentFilter(equipment));
     } else {
       dispatch(addEquipmentFilter(equipment));
     }
   };
-  
-  const handleVehicleTypeChange = (type) => {
-    // If same type is selected, deselect it
-    if (vehicleType === type) {
-      dispatch(setVehicleType(""));
+
+  const handleVehicleTypeToggle = (type) => {
+    const isSelected = vehicleTypeFilters.includes(type);
+    if (isSelected) {
+      dispatch(removeVehicleTypeFilter(type));
     } else {
-      dispatch(setVehicleType(type));
+      dispatch(addVehicleTypeFilter(type));
     }
   };
-  
+
   const handleSearch = async () => {
     if (!isFiltersChanged && !hasActiveFilters) {
-      return; // No changes to search
+      return;
     }
-    
-    // Reset pagination and clear previous results
     dispatch(resetPagination());
     dispatch(clearFilteredTrucks());
-    
-    // Perform search
     try {
       const result = await dispatch(searchTrucksWithFilters(activeFilters));
-      
       if (result.payload) {
-        // Update pagination data
         dispatch(setPaginationData({
           totalPages: result.payload.totalPages,
           totalItems: result.payload.totalItems,
           currentPage: result.payload.currentPage,
         }));
       }
-      
-      // Mark filters as applied
       dispatch(markFiltersApplied());
     } catch (error) {
       console.error("Search failed:", error);
     }
   };
-  
+
   return (
     <div className={style.container}>
-      {/* Location Filter */}
       <div className={style.locationSection}>
         <label className={style.locationLabel}>Location</label>
         <div className={style.locationInput}>
-          <img src="/src/assets/icons/map.svg" alt="Location" className={style.locationIcon} />
           <input
             type="text"
             placeholder="Kiev, Ukraine"
@@ -116,12 +88,8 @@ const CatalogFilters = () => {
           />
         </div>
       </div>
-
-      {/* Filters Section */}
       <div className={style.filtersSection}>
         <h3 className={style.sectionTitle}>Filters</h3>
-        
-        {/* Vehicle Equipment */}
         <div className={style.filterGroup}>
           <h4 className={style.groupTitle}>Vehicle equipment</h4>
           <img src="/src/assets/icons/divider.svg" alt="Divider" className={style.groupMiddleLine} />
@@ -173,29 +141,40 @@ const CatalogFilters = () => {
             </button>
           </div>
         </div>
-
-        {/* Vehicle Type */}
         <div className={style.filterGroup}>
           <h4 className={style.groupTitle}>Vehicle type</h4>
           <img src="/src/assets/icons/divider.svg" alt="Divider" className={style.groupMiddleLine} />
           <div className={style.optionsGrid}>
-            {vehicleTypeOptions.map((type) => (
-              <button
-                key={type.id}
-                className={`${style.filterOption} ${
-                  vehicleType === type.id ? style.selected : ""
-                }`}
-                onClick={() => handleVehicleTypeChange(type.id)}
-              >
-                <img src={type.icon} alt={type.label} className={style.icon} />
-                <span className={style.label}>{type.label}</span>
-              </button>
-            ))}
+            <button
+              className={`${style.filterOption} ${
+                vehicleTypeFilters.includes("panelTruck") ? style.selected : ""
+              }`}
+              onClick={() => handleVehicleTypeToggle("panelTruck")}
+            >
+              <img src="/src/assets/icons/type/van.svg" alt="Van" className={style.icon} />
+              <span className={style.label}>Van</span>
+            </button>
+            <button
+              className={`${style.filterOption} ${
+                vehicleTypeFilters.includes("fullyIntegrated") ? style.selected : ""
+              }`}
+              onClick={() => handleVehicleTypeToggle("fullyIntegrated")}
+            >
+              <img src="/src/assets/icons/type/fully_integrated.svg" alt="Fully Integrated" className={style.icon} />
+              <span className={style.label}>Fully Integrated</span>
+            </button>
+            <button
+              className={`${style.filterOption} ${
+                vehicleTypeFilters.includes("alcove") ? style.selected : ""
+              }`}
+              onClick={() => handleVehicleTypeToggle("alcove")}
+            >
+              <img src="/src/assets/icons/type/alcove.svg" alt="Alcove" className={style.icon} />
+              <span className={style.label}>Alcove</span>
+            </button>
           </div>
         </div>
       </div>
-
-      {/* Search Button */}
       <button 
         className={style.searchButton}
         onClick={handleSearch}
