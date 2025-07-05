@@ -1,6 +1,34 @@
 .container {
-  width: 1440px;
-  min-height: 50px;
-  margin: 0 auto;
+  max-width: 1440px;
   background-color: var(--white);
+  display: flex;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #6c717b;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #e44848;
+}
+
+.error button {
+  margin-top: 16px;
+  background: #e44848;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+

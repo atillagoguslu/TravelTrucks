@@ -1,0 +1,181 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 48px 64px;
+  width: 360px;
+  min-height: 600px;
+}
+
+/* Location Section */
+.locationSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.locationLabel {
+  display: flex;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+
+.locationInput {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--inputs);
+  border-radius: 12px;
+  padding: 18px 20px 18px 20px;
+  width: 320px;
+  height: 20px;
+}
+
+.locationIcon {
+  font-size: 20px;
+  margin-right: 12px;
+  color: #6c717b;
+}
+
+.input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #101828;
+}
+
+.input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+
+/* Filters Section */
+.filtersSection {
+  margin-top: 40px;
+}
+
+.sectionTitle {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.groupTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+}
+
+.groupMiddleLine {
+  width: 360px;
+  height: 2px;
+}
+
+/* Options Grid */
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.filterOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #dadde1;
+  border-radius: 12px;
+  padding: 16px 12px;
+  height: 100px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.filterOption:hover {
+  border-color: #e44848;
+  background: #fef7f7;
+}
+
+.filterOption.selected {
+  border-color: #e44848;
+  background: #fef7f7;
+}
+
+.filterOption .icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  object-fit: contain;
+}
+
+.filterOption .label {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--main);
+}
+
+/* Vehicle type grid adjustment */
+.filterGroup:last-child .optionsGrid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.filterGroup:last-child .filterOption {
+  height: 100px;
+}
+
+/* Search Button */
+.searchButton {
+  margin-top: 40px;
+  background: #e44848;
+  color: white;
+  border: none;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  border-radius: 200px;
+  padding: 16px 60px;
+  width: 166px;
+  height: 56px;
+
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.searchButton:hover {
+  background: #d73c3c;
+}
+
+.searchButton:disabled {
+  background: #dadde1;
+  cursor: not-allowed;
+}
