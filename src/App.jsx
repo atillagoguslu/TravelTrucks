@@ -1,8 +1,16 @@
 import './App.css'
 import { Outlet, NavLink } from 'react-router';
 import logo from './assets/logo.svg';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { getTrucks } from './redux/trucks/operations';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTrucks());
+  }, [dispatch]);
 
   return (
     <>

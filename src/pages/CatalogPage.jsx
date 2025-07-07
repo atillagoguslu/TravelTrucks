@@ -21,10 +21,8 @@ const CatalogPage = () => {
   const hasActiveFilters = useSelector(selectHasActiveFilters);
   
   useEffect(() => {
-    if (!hasActiveFilters) {
-      dispatch(getTrucks());
-    }
-  }, [dispatch, hasActiveFilters]);
+    dispatch(getTrucks());
+  }, [dispatch]);
   
   if (isLoadingFilters) {
     return (

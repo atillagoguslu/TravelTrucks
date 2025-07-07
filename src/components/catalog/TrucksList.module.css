@@ -1,5 +1,13 @@
 .container {
-  width: 700px;
-  height: 700px;
-  background-color: #f13c3c;
+  width: 888px;
+  min-height: 200px;
+  background-color: var(--white);
+  padding-right: 64px;
+  padding-top: 48px;
+}
+
+.trucksList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }

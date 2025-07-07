@@ -7,7 +7,15 @@ const getTrucks = createAsyncThunk("trucks/getTrucks", async (_, thunkAPI) => {
     const getResponse = await axios.get(CAMPERS_URL, {
       headers: { "Content-Type": "application/json" },
     });
-    return getResponse.data;
+
+    const data = getResponse.data;
+    // If the API returns paginated data { total, items: [] }
+    if (data && Array.isArray(data.items)) {
+      return data.items;
+    }
+
+    // Otherwise assume the response itself is an array
+    return data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.getResponse.data);
   }
