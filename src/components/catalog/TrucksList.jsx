@@ -12,6 +12,9 @@ const TrucksList = () => {
           <Truck key={truck.id} truck={truck} />
         ))}
       </div>
+      <div className={style.trucksListPagination}>
+        <button><span>Load more</span></button>
+      </div>
     </div>
   );
 };

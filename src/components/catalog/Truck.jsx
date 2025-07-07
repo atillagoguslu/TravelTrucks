@@ -1,8 +1,17 @@
 import style from "./Truck.module.css";
+import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import {
+  addFavourite,
+  removeFavourite,
+} from "../../redux/favourites/slice.js";
+import { selectFavouritedIds } from "../../redux/favourites/selectors.js";
+import { useSelector } from "react-redux";
+
+// Icons -------------------------------------------------------
 import favBlackIcon from "../../assets/icons/fav/fav_black.svg";
 import ratingStar from "../../assets/icons/rating/star_filled.svg";
 import mapIcon from "../../assets/icons/map.svg";
-import { useNavigate } from "react-router";
 import automaticIcon from "../../assets/icons/equipment/automatic.svg";
 import acIcon from "../../assets/icons/features/ac.svg";
 import petrolIcon from "../../assets/icons/features/petrol.svg";
@@ -14,9 +23,12 @@ import microwaveIcon from "../../assets/icons/features/microwave.svg";
 import gasIcon from "../../assets/icons/features/gas.svg";
 import waterIcon from "../../assets/icons/features/water.svg";
 import tvIcon from "../../assets/icons/features/tv.svg";
-
+// ------------------------------------------------------------
 const Truck = ({ truck }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const favourites = useSelector(selectFavouritedIds);
+  const isFavourite = favourites.includes(truck.id);
 
   const descriptionLimit = 61;
   const shortDescription =
@@ -52,8 +64,13 @@ const Truck = ({ truck }) => {
     navigate(`/catalog/${truck.id}`);
   };
 
-  const handleFavorite = () => {
-    console.log("favorite");
+  const handleFavorite = (id) => {
+    console.log("favorite", id, "isFavourite", isFavourite);
+    if (isFavourite) {
+      dispatch(removeFavourite(id));
+    } else {
+      dispatch(addFavourite(id));
+    }
   };
 
   return (
@@ -68,10 +85,13 @@ const Truck = ({ truck }) => {
               <h2>{truck.name}</h2>
               <div className={style.truckInfoHeaderUpperRight}>
                 <p>€{truck.price.toFixed(2)}</p>
-                <a href="" onClick={(e) => {
-                  e.preventDefault();
-                  handleFavorite();
-                }}>
+                <a
+                  href=""
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleFavorite(truck.id);
+                  }}
+                >
                   <img src={favBlackIcon} alt="favorite" />
                 </a>
               </div>
