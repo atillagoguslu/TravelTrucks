@@ -17,7 +17,6 @@ import tvIcon from "../../assets/icons/features/tv.svg";
 
 const Truck = ({ truck }) => {
   const navigate = useNavigate();
-  console.log(truck);
 
   const descriptionLimit = 61;
   const shortDescription =
@@ -53,6 +52,10 @@ const Truck = ({ truck }) => {
     navigate(`/catalog/${truck.id}`);
   };
 
+  const handleFavorite = () => {
+    console.log("favorite");
+  };
+
   return (
     <div className={style.container}>
       <div className={style.truckLayout}>
@@ -65,7 +68,12 @@ const Truck = ({ truck }) => {
               <h2>{truck.name}</h2>
               <div className={style.truckInfoHeaderUpperRight}>
                 <p>€{truck.price.toFixed(2)}</p>
-                <img src={favBlackIcon} alt="favorite" />
+                <a href="" onClick={(e) => {
+                  e.preventDefault();
+                  handleFavorite();
+                }}>
+                  <img src={favBlackIcon} alt="favorite" />
+                </a>
               </div>
             </div>
             <div className={style.truckInfoHeaderLower}>

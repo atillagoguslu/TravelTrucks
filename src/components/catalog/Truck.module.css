@@ -67,7 +67,11 @@
   color: var(--main);
 }
 
-.truckInfoHeaderUpperRight img {
+.truckInfoHeaderUpperRight a {
+  cursor: pointer;
+}
+
+.truckInfoHeaderUpperRight a img {
   width: 24px;
   height: 24px;
 }
