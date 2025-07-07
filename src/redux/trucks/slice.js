@@ -4,11 +4,12 @@ import {
   fetchTrucksWithFilters,
   searchTrucksWithFilters,
   loadMoreTrucks,
-} from "../filters/operations.js";
+} from "./operations.js";
 
 const initialState = {
   allTrucks: [], // All trucks (unfiltered)
   filteredTrucks: [], // Filtered trucks for display
+  allFilteredTrucks: [], // All filtered trucks (for load more)
   loadingStates: {
     get: false,
     filter: false,
@@ -26,6 +27,7 @@ const trucksSlice = createSlice({
   reducers: {
     clearFilteredTrucks: (state) => {
       state.filteredTrucks = [];
+      state.allFilteredTrucks = [];
       state.hasMorePages = false;
       state.isAppending = false;
     },
@@ -63,7 +65,11 @@ const trucksSlice = createSlice({
         state.error = null;
       })
       .addCase(fetchTrucksWithFilters.fulfilled, (state, action) => {
-        const { trucks, totalPages, currentPage } = action.payload;
+        const { trucks, totalPages, currentPage, allFilteredTrucks } =
+          action.payload;
+
+        // Store all filtered trucks for future load more operations
+        state.allFilteredTrucks = allFilteredTrucks;
 
         if (currentPage === 1) {
           // New search - replace trucks
@@ -92,7 +98,7 @@ const trucksSlice = createSlice({
         state.isAppending = false;
         state.error = null;
       })
-      .addCase(searchTrucksWithFilters.fulfilled, (state, action) => {
+      .addCase(searchTrucksWithFilters.fulfilled, (state) => {
         // This will be handled by fetchTrucksWithFilters.fulfilled
         state.loadingStates.filter = false;
       })
@@ -106,7 +112,7 @@ const trucksSlice = createSlice({
         state.loadingStates.loadMore = true;
         state.isAppending = true;
       })
-      .addCase(loadMoreTrucks.fulfilled, (state, action) => {
+      .addCase(loadMoreTrucks.fulfilled, (state) => {
         // This will be handled by fetchTrucksWithFilters.fulfilled
         state.loadingStates.loadMore = false;
       })
