@@ -1,86 +1,65 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  border: 1px solid var(--gray-light);
-  border-radius: 10px;
-  padding: 44px;
-  width: calc(641px - 44px * 2);
-  height: calc(588px - 44px * 2);
+  gap: 44px;
 }
 
-.header {
+.review {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 
-.header h2 {
+.reviewHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.reviewHeaderLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--badges);
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 20px;
-  line-height: 120%;
+  color: var(--button);
+}
+
+.reviewHeaderRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
+.reviewHeaderRight p {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
   color: var(--main);
 }
 
-.header p {
+.reviewHeaderRightStars {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.reviewHeaderRightStars img {
+  width: 16px;
+  height: 16px;
+}
+
+.reviewComment p {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: var(--gray);
-}
-
-/* Form */
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.form input,
-.form textarea {
-  border-radius: 12px;
-  padding: 18px;
-  width: calc(527px - 18px * 2);
-  height: calc(60px - 18px * 2);
-  background: var(--inputs);
-  border: none;
-  font-family: var(--font-family);
-  font-size: 16px;
-  line-height: 150%;
-  color: var(--main);
-}
-
-.form input::placeholder,
-.form textarea::placeholder {
-  color: var(--gray);
-}
-
-.form textarea {
-  height: 114px;
-  resize: none;
-}
-
-/* Send button */
-.sendButton {
-  display: flex;
-  justify-content: center;
-}
-
-.sendButton button {
-  border-radius: 200px;
-  padding: 16px 60px;
-  width: 166px;
-  height: 56px;
-  background-color: var(--button);
-  border: none;
-  cursor: pointer;
-
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.01em;
-  color: var(--white);
+  color: var(--text);
 }

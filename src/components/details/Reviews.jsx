@@ -1,21 +1,39 @@
 import style from './Reviews.module.css';
+import starIcon from '../../assets/icons/rating/star_filled.svg';
+import starIconEmpty from '../../assets/icons/rating/star_empty.svg';
 
-const Reviews = () => {
+const Reviews = ({ truck }) => {
+  const reviews = truck.reviews;
+
   return (
     <div className={style.container}>
-      <div className={style.header}>
-        <h2>Book your campervan now</h2>
-        <p>Stay connected! We are always ready to help you.</p>
-      </div>
-      <div className={style.form}>
-        <input type="text" placeholder="Name*" />
-        <input type="email" placeholder="Email*" />
-        <input type="text" placeholder="Booking date*" />
-        <textarea placeholder="Comment" />
-      </div>
-      <div className={style.sendButton}>
-        <button>Send</button>
-      </div>
+      {reviews.map((review) => (
+        <div className={style.review} key={review.id}>
+          <div className={style.reviewHeader}>
+            <div className={style.reviewHeaderLeft}>
+              {review.reviewer_name.charAt(0)}
+            </div>
+            <div className={style.reviewHeaderRight}>
+              <p>{review.reviewer_name}</p>
+              <div className={style.reviewHeaderRightStars}>
+                {Array.from({ length: review.reviewer_rating }).map(
+                  (_, index) => (
+                    <img src={starIcon} alt="star" key={index} />
+                  ),
+                )}
+                {Array.from({ length: 5 - review.reviewer_rating }).map(
+                  (_, index) => (
+                    <img src={starIconEmpty} alt="star" key={index} />
+                  ),
+                )}
+              </div>
+            </div>
+          </div>
+          <div className={style.reviewComment}>
+            <p>{review.comment}</p>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -6,6 +6,7 @@ import ratingStar from '../assets/icons/rating/star_filled.svg';
 import mapIcon from '../assets/icons/map.svg';
 import { Outlet } from 'react-router';
 import Features from '../components/details/Features';
+import Book from '../components/details/Book';
 import Reviews from '../components/details/Reviews';
 
 const DetailsPage = () => {
@@ -76,8 +77,9 @@ const DetailsPage = () => {
           <h2>Reviews</h2>
         </div>
         <div className={style.detailsPageFeaturesAndReviews}>
-          <Features truck={truck} />
-          <Reviews />
+          <Reviews truck={truck} />
+          {/* <Features truck={truck} /> */}
+          <Book />
         </div>
       </div>
     </>
