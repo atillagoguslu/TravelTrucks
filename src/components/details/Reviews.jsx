@@ -1,8 +1,14 @@
 import style from './Reviews.module.css';
 import starIcon from '../../assets/icons/rating/star_filled.svg';
 import starIconEmpty from '../../assets/icons/rating/star_empty.svg';
+import { useOutletContext } from 'react-router';
 
-const Reviews = ({ truck }) => {
+const Reviews = ({ truck: propTruck }) => {
+  const { truck: contextTruck } = useOutletContext() || {};
+  const truck = propTruck || contextTruck;
+
+  if (!truck) return null;
+
   const reviews = truck.reviews;
 
   return (

@@ -4,10 +4,8 @@ import { useSelector } from 'react-redux';
 import { selectTrucks, selectIsLoadingTrucks } from '../redux/trucks/selectors';
 import ratingStar from '../assets/icons/rating/star_filled.svg';
 import mapIcon from '../assets/icons/map.svg';
-import { Outlet } from 'react-router';
-import Features from '../components/details/Features';
+import { Outlet, NavLink } from 'react-router';
 import Book from '../components/details/Book';
-import Reviews from '../components/details/Reviews';
 
 const DetailsPage = () => {
   const { id } = useParams();
@@ -73,12 +71,26 @@ const DetailsPage = () => {
           <p>{shortenDescription}</p>
         </div>
         <div className={style.detailsPageFeaturesAndReviewsHeader}>
-          <h2>Features</h2>
-          <h2>Reviews</h2>
+          <NavLink
+            to={`/catalog/${id}`}
+            end
+            className={({ isActive }) =>
+              isActive ? `${style.tab} ${style.active}` : style.tab
+            }
+          >
+            Features
+          </NavLink>
+          <NavLink
+            to={`/catalog/${id}/reviews`}
+            className={({ isActive }) =>
+              isActive ? `${style.tab} ${style.active}` : style.tab
+            }
+          >
+            Reviews
+          </NavLink>
         </div>
         <div className={style.detailsPageFeaturesAndReviews}>
-          <Reviews truck={truck} />
-          {/* <Features truck={truck} /> */}
+          <Outlet context={{ truck }} />
           <Book />
         </div>
       </div>

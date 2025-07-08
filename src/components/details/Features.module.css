@@ -1,13 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  border: 1px solid var(--gray-light);
-  border-radius: 20px;
-  padding: 44px 80px;
-  background-color: var(--white);
+  gap: 100px;
+  border-radius: 10px;
+  padding: 44px 54px;
+  background-color: var(--inputs);
   max-width: 631px;
-  box-sizing: border-box;
 }
 
 .categories {
@@ -22,9 +20,10 @@
   justify-content: center;
   background-color: var(--badges);
   border-radius: 100px;
-  padding: 12px 20px;
-  height: 44px;
+  padding: 12px 18px;
+  height: 48px;
   box-sizing: border-box;
+  gap: 8px;
 }
 
 .category h3 {
