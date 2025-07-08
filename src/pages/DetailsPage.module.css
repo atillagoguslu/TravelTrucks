@@ -1,0 +1,134 @@
+.detailsPageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex: 1;
+  background-color: #5da59f;
+  padding: 48px 64px 60px 64px;
+}
+
+.detailsPageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: #fff;
+}
+
+.detailsPageHeaderTitle {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--main);
+}
+
+.detailsPageHeaderLower {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailsPageHeaderLowerUp {
+  display: flex;
+  flex-direction: row;
+}
+
+.detailsPageHeaderLowerUpLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.detailsPageHeaderLowerUpLeft img {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.detailsPageHeaderLowerUpLeft p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: var(--main);
+}
+
+.detailsPageHeaderLowerUpRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.detailsPageHeaderLowerUpRight img {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.detailsPageHeaderLowerUpRight p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+}
+
+.detailsPageHeaderLowerDown p {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--main);
+  padding: 4px 0;
+}
+
+.detailsPagePictures {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.detailsPagePictures img {
+  width: calc((100% / 3) - 32px);
+  height: 312px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.detailsPageDescription p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}
+
+.detailsPageFeaturesAndReviewsHeader {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-top: 32px;
+  height: 48px;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.detailsPageFeaturesAndReviewsHeader h2 {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+}
+
+.detailsPageFeaturesAndReviews {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
