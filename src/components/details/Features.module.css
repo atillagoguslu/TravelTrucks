@@ -26,6 +26,11 @@
   gap: 8px;
 }
 
+.category img {
+  width: 20px;
+  height: 20px;
+}
+
 .category h3 {
   font-family: var(--font-family);
   font-weight: 500;
