@@ -24,7 +24,6 @@ const CatalogPage = () => {
   const pagination = useSelector(selectPagination);
 
   useEffect(() => {
-    // Load first 4 trucks with current filters (empty filters = all trucks)
     dispatch(
       fetchTrucksWithFilters({
         filters: activeFilters,

@@ -55,11 +55,8 @@ const CatalogFilters = () => {
     if (!isFiltersChanged && !hasActiveFilters) {
       return;
     }
-    // Clear previous filtered trucks
     dispatch(clearFilteredTrucks());
-    // Reset pagination to page 1
     dispatch(resetPagination());
-    // Search with current filters (pagination and markFiltersApplied handled in operation)
     dispatch(searchTrucksWithFilters(activeFilters));
   };
 

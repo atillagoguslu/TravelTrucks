@@ -1,34 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  // Active filters that will be sent to API
   activeFilters: {
     location: "",
-    equipment: [], // Array of equipment IDs/names
-    vehicleTypes: [], // Array of vehicle types: "panelTruck", "fullyIntegrated", "alcove"
+    equipment: [],
+    vehicleTypes: [],
   },
-  // Pagination state
   pagination: {
     currentPage: 1,
-    limit: 4, // Items per page
+    limit: 4,
     totalPages: 1,
     totalItems: 0,
   },
-  // UI state
-  isFiltersChanged: false, // Track if filters changed since last search
+  isFiltersChanged: false,
 };
 
 const filterSlice = createSlice({
   name: "filters",
   initialState,
   reducers: {
-    // Location filter
     setLocation: (state, action) => {
       state.activeFilters.location = action.payload;
       state.isFiltersChanged = true;
     },
 
-    // Equipment filters (checkboxes)
     addEquipmentFilter: (state, action) => {
       const equipment = action.payload;
       if (!state.activeFilters.equipment.includes(equipment)) {
@@ -45,7 +40,6 @@ const filterSlice = createSlice({
       state.isFiltersChanged = true;
     },
 
-    // Vehicle type filters (checkboxes)
     addVehicleTypeFilter: (state, action) => {
       const type = action.payload;
       if (!state.activeFilters.vehicleTypes.includes(type)) {
@@ -60,7 +54,6 @@ const filterSlice = createSlice({
       state.isFiltersChanged = true;
     },
 
-    // Clear all filters
     clearAllFilters: (state) => {
       state.activeFilters = {
         location: "",
@@ -71,7 +64,6 @@ const filterSlice = createSlice({
       state.isFiltersChanged = true;
     },
 
-    // Pagination
     setCurrentPage: (state, action) => {
       state.pagination.currentPage = action.payload;
     },
@@ -83,12 +75,10 @@ const filterSlice = createSlice({
       };
     },
 
-    // Reset pagination when filters change
     resetPagination: (state) => {
       state.pagination.currentPage = 1;
     },
 
-    // Mark filters as applied (after successful API call)
     markFiltersApplied: (state) => {
       state.isFiltersChanged = false;
     },
