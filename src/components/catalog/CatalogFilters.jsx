@@ -19,6 +19,19 @@ import {
 import { searchTrucksWithFilters } from "../../redux/trucks/operations.js";
 import { clearFilteredTrucks } from "../../redux/trucks/slice.js";
 
+import mapIcon from "../../assets/icons/map.svg";
+import dividerIcon from "../../assets/icons/divider.svg";
+
+import acIcon from "../../assets/icons/equipment/ac.svg";
+import automaticIcon from "../../assets/icons/equipment/automatic.svg";
+import kitchenIcon from "../../assets/icons/equipment/kitchen.svg";
+import tvIcon from "../../assets/icons/equipment/tv.svg";
+import bathroomIcon from "../../assets/icons/equipment/bathroom.svg";
+import vanIcon from "../../assets/icons/type/van.svg";
+import fullyIntegratedIcon from "../../assets/icons/type/fully_integrated.svg";
+import alcoveIcon from "../../assets/icons/type/alcove.svg";
+
+
 const CatalogFilters = () => {
   const dispatch = useDispatch();
   const activeFilters = useSelector(selectActiveFilters);
@@ -65,6 +78,11 @@ const CatalogFilters = () => {
       <div className={style.locationSection}>
         <label className={style.locationLabel}>Location</label>
         <div className={style.locationInput}>
+          <img
+            src={mapIcon}
+            alt="Map"
+            className={style.locationIcon}
+          />
           <input
             type="text"
             placeholder="Kiev, Ukraine"
@@ -79,7 +97,7 @@ const CatalogFilters = () => {
         <div className={style.filterGroup}>
           <h4 className={style.groupTitle}>Vehicle equipment</h4>
           <img
-            src="/src/assets/icons/divider.svg"
+            src={dividerIcon}
             alt="Divider"
             className={style.groupMiddleLine}
           />
@@ -91,7 +109,7 @@ const CatalogFilters = () => {
               onClick={() => handleEquipmentToggle("AC")}
             >
               <img
-                src="/src/assets/icons/equipment/ac.svg"
+                src={acIcon}
                 alt="AC"
                 className={style.icon}
               />
@@ -104,7 +122,7 @@ const CatalogFilters = () => {
               onClick={() => handleEquipmentToggle("automatic")}
             >
               <img
-                src="/src/assets/icons/equipment/automatic.svg"
+                src={automaticIcon}
                 alt="Automatic"
                 className={style.icon}
               />
@@ -117,7 +135,7 @@ const CatalogFilters = () => {
               onClick={() => handleEquipmentToggle("kitchen")}
             >
               <img
-                src="/src/assets/icons/equipment/kitchen.svg"
+                src={kitchenIcon}
                 alt="Kitchen"
                 className={style.icon}
               />
@@ -130,7 +148,7 @@ const CatalogFilters = () => {
               onClick={() => handleEquipmentToggle("TV")}
             >
               <img
-                src="/src/assets/icons/equipment/tv.svg"
+                src={tvIcon}
                 alt="TV"
                 className={style.icon}
               />
@@ -143,7 +161,7 @@ const CatalogFilters = () => {
               onClick={() => handleEquipmentToggle("bathroom")}
             >
               <img
-                src="/src/assets/icons/equipment/bathroom.svg"
+                src={bathroomIcon}
                 alt="Bathroom"
                 className={style.icon}
               />
@@ -154,7 +172,7 @@ const CatalogFilters = () => {
         <div className={style.filterGroup}>
           <h4 className={style.groupTitle}>Vehicle type</h4>
           <img
-            src="/src/assets/icons/divider.svg"
+            src={dividerIcon}
             alt="Divider"
             className={style.groupMiddleLine}
           />
@@ -166,7 +184,7 @@ const CatalogFilters = () => {
               onClick={() => handleVehicleTypeToggle("panelTruck")}
             >
               <img
-                src="/src/assets/icons/type/van.svg"
+                src={vanIcon}
                 alt="Van"
                 className={style.icon}
               />
@@ -181,7 +199,7 @@ const CatalogFilters = () => {
               onClick={() => handleVehicleTypeToggle("fullyIntegrated")}
             >
               <img
-                src="/src/assets/icons/type/fully_integrated.svg"
+                src={fullyIntegratedIcon}
                 alt="Fully Integrated"
                 className={style.icon}
               />
@@ -194,7 +212,7 @@ const CatalogFilters = () => {
               onClick={() => handleVehicleTypeToggle("alcove")}
             >
               <img
-                src="/src/assets/icons/type/alcove.svg"
+                src={alcoveIcon}
                 alt="Alcove"
                 className={style.icon}
               />
