@@ -2,16 +2,16 @@
   /* Color Palette */
   --main: #101828;
   --text: #475467;
-  --gray: #6C717B;
-  --button: #E44848;
-  --button-hover: #D84343;
-  --rating: #FFC531;
-  --gray-light: #DADDE1;
-  --badges: #F2F4F7;
-  --inputs: #F7F7F7;
-  --white: #FFFFFF;
+  --gray: #6c717b;
+  --button: #e44848;
+  --button-hover: #d84343;
+  --rating: #ffc531;
+  --gray-light: #dadde1;
+  --badges: #f2f4f7;
+  --inputs: #f7f7f7;
+  --white: #ffffff;
 
-  --font-family: "Inter", monospace;
+  --font-family: 'Inter', monospace;
   --font-weight: 700;
   --font-size: 16px;
   --line-height: 1.5;

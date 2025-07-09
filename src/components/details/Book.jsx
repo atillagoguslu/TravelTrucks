@@ -1,6 +1,11 @@
 import style from './Book.module.css';
+import DatePicker from 'react-datepicker';
+import { useState } from 'react';
+import 'react-datepicker/dist/react-datepicker.css';
+import './DatePickerCustom.css';
 
 const Book = () => {
+  const [startDate, setStartDate] = useState(null);
   return (
     <div className={style.container}>
       <div className={style.header}>
@@ -10,7 +15,15 @@ const Book = () => {
       <div className={style.form}>
         <input type="text" placeholder="Name*" />
         <input type="email" placeholder="Email*" />
-        <input type="text" placeholder="Booking date*" />
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+          placeholderText="Booking date*"
+          dateFormat="dd/MM/yyyy"
+          className={style.dateInput}
+          calendarStartDay={1}
+          formatWeekDay={name => name.slice(0, 3)}
+        />
         <textarea placeholder="Comment" />
       </div>
       <div className={style.sendButton}>
