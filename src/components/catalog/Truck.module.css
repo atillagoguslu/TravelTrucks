@@ -56,6 +56,7 @@
 .truckInfoHeaderUpperRight {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 8px;
 }
 
@@ -67,11 +68,13 @@
   color: var(--main);
 }
 
-.truckInfoHeaderUpperRight a {
+.truckInfoHeaderUpperRight button {
+  border: none;
+  background: none;
   cursor: pointer;
 }
 
-.truckInfoHeaderUpperRight a img {
+.truckInfoHeaderUpperRight button img {
   width: 24px;
   height: 24px;
 }
