@@ -1,4 +1,4 @@
-import './App.css'
+import './App.css';
 import { Outlet, NavLink } from 'react-router';
 import logo from './assets/logo.svg';
 import { useDispatch } from 'react-redux';
@@ -20,14 +20,28 @@ function App() {
             <img src={logo} alt="logo" />
           </div>
           <div className="nav">
-            <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
-            <NavLink to="/catalog" className={({ isActive }) => isActive ? 'active' : ''}>Catalog</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? 'links active' : 'links'
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/catalog"
+              className={({ isActive }) =>
+                isActive ? 'links active' : 'links'
+              }
+            >
+              Catalog
+            </NavLink>
           </div>
         </div>
         <Outlet />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

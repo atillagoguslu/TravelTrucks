@@ -34,6 +34,11 @@
   display: flex;
   justify-content: space-between;
 
+  /* text-decoration: none;
+  color: var(--main); */
+}
+
+.links {
   text-decoration: none;
   color: var(--main);
 }
