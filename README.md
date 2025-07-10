@@ -1,12 +1,64 @@
-# React + Vite
+# 🚐 TravelTrucks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application for browsing and booking camper trucks and recreational vehicles.
 
-Currently, two official plugins are available:
+## 🛠️ Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![React](https://img.shields.io/badge/React-19.1.0-blue?style=for-the-badge&logo=react)
+![Vite](https://img.shields.io/badge/Vite-7.0.0-purple?style=for-the-badge&logo=vite)
+![Redux Toolkit](https://img.shields.io/badge/Redux_Toolkit-2.8.2-red?style=for-the-badge&logo=redux)
+![React Router](https://img.shields.io/badge/React_Router-7.6.2-green?style=for-the-badge&logo=react-router)
+![Axios](https://img.shields.io/badge/Axios-1.10.0-orange?style=for-the-badge&logo=axios)
+![ESLint](https://img.shields.io/badge/ESLint-9.29.0-yellow?style=for-the-badge&logo=eslint)
 
-## Expanding the ESLint configuration
+## 📖 Description
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+TravelTrucks is a modern web application that allows users to explore a catalog of camper trucks and RVs. Users can filter vehicles by location, equipment features, and vehicle type, view detailed information about each vehicle, and read reviews.
+
+## ✨ Key Features
+
+- **🚗 Vehicle Catalog**: Browse through a comprehensive collection of camper trucks and RVs
+- **🔍 Advanced Filtering**: Filter vehicles by location, equipment (AC, kitchen, bathroom, TV, automatic transmission), and vehicle type (Van, Fully Integrated, Alcove)
+- **📋 Detailed Vehicle Information**: View comprehensive details including features, specifications, and vehicle dimensions
+- **⭐ Reviews System**: Read and browse customer reviews for each vehicle
+- **⚙️ Redux State Management**: Efficient state management with Redux Toolkit and persistence
+
+## 🚀 Installation and Usage
+
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+cd TravelTrucks
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+
+## 👨‍💻 Author
+
+This project was created by Atilla Göğüslü.
