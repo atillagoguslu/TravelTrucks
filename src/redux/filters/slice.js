@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   activeFilters: {
-    location: "",
+    location: '',
     equipment: [],
     vehicleTypes: [],
   },
@@ -16,7 +16,7 @@ const initialState = {
 };
 
 const filterSlice = createSlice({
-  name: "filters",
+  name: 'filters',
   initialState,
   reducers: {
     setLocation: (state, action) => {
@@ -34,29 +34,26 @@ const filterSlice = createSlice({
 
     removeEquipmentFilter: (state, action) => {
       const equipment = action.payload;
-      state.activeFilters.equipment = state.activeFilters.equipment.filter(
-        (item) => item !== equipment
-      );
+      state.activeFilters.equipment = state.activeFilters.equipment.filter((item) => item !== equipment);
       state.isFiltersChanged = true;
     },
 
     addVehicleTypeFilter: (state, action) => {
       const type = action.payload;
-      if (!state.activeFilters.vehicleTypes.includes(type)) {
-        state.activeFilters.vehicleTypes.push(type);
-        state.isFiltersChanged = true;
-      }
+      state.activeFilters.vehicleTypes = [type];
+      state.isFiltersChanged = true;
     },
     removeVehicleTypeFilter: (state, action) => {
       const type = action.payload;
-      state.activeFilters.vehicleTypes =
-        state.activeFilters.vehicleTypes.filter((item) => item !== type);
-      state.isFiltersChanged = true;
+      if (state.activeFilters.vehicleTypes[0] === type) {
+        state.activeFilters.vehicleTypes = [];
+        state.isFiltersChanged = true;
+      }
     },
 
     clearAllFilters: (state) => {
       state.activeFilters = {
-        location: "",
+        location: '',
         equipment: [],
         vehicleTypes: [],
       };
