@@ -6,6 +6,7 @@ import TrucksList from '../components/catalog/TrucksList.jsx';
 import { selectIsLoadingFilters, selectTrucksErrors } from '../redux/trucks/selectors.js';
 import { selectActiveFilters } from '../redux/filters/selectors.js';
 import { fetchTrucksWithFilters } from '../redux/trucks/operations.js';
+import Loader from '../components/Loader';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const CatalogPage = () => {
       <div className={style.container}>
         <CatalogFilters />
         <div className={style.loading}>
-          <p>Loading trucks...</p>
+          <Loader />
         </div>
       </div>
     );
