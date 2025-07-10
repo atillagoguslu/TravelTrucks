@@ -24,6 +24,7 @@ const getTrucks = createAsyncThunk('trucks/getTrucks', async (_, thunkAPI) => {
   }
 });
 
+// Veri çekimi öncesi quary'leri ayarlamak için
 const buildQueryParams = (filters, pagination) => {
   const params = new URLSearchParams();
 
@@ -64,6 +65,7 @@ const buildQueryParams = (filters, pagination) => {
 
   return params.toString();
 };
+// ------------------------------------------------------------
 
 const fetchTrucksWithFilters = createAsyncThunk(
   'trucks/fetchTrucksWithFilters',

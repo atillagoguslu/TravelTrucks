@@ -46,44 +46,46 @@ const Features = ({ truck: propTruck }) => {
       </div>
       <div className={style.VehicleDetailsContainer}>
         <div className={style.VehicleDetailsTitle}>
-          <h3>Vehicle details</h3>
+          <h2>Vehicle details</h2>
         </div>
         <div className={style.VehicleDetailsLine}>
           <img src={line} alt="line" />
         </div>
         <div className={style.VehicleDetailsList}>
-          <div className={style.VehicleDetailsListItem}>
-            <h3>Form</h3>
-            <p>{truck.form}</p>
-          </div>
-          <div className={style.VehicleDetailsListItem}>
-            <h3>Length</h3>
-            <p>{truck.length}</p>
-          </div>
-          <div className={style.VehicleDetailsListItem}>
-            <h3>Width</h3>
-            <p>{truck.width}</p>
-          </div>
-          <div className={style.VehicleDetailsListItem}>
-            <h3>Height</h3>
-            <p>{truck.height}</p>
-          </div>
-          <div className={style.VehicleDetailsListItem}>
-            <h3>Tank</h3>
-            <p>{truck.tank}</p>
-          </div>
-          <div className={style.VehicleDetailsListItem}>
-            <h3>Consumption</h3>
-            <p>{truck.consumption}</p>
-          </div>
-          <div className={style.VehicleDetailsListItem}>
-            <h3>Transmission</h3>
-            <p>{truck.transmission}</p>
-          </div>
-          <div className={style.VehicleDetailsListItem}>
-            <h3>Engine</h3>
-            <p>{truck.engine}</p>
-          </div>
+          <ul>
+            <li className={style.VehicleDetailsListItem}>
+              <h3>Form</h3>
+              <p>{truck.form}</p>
+            </li>
+            <li className={style.VehicleDetailsListItem}>
+              <h3>Length</h3>
+              <p>{truck.length}</p>
+            </li>
+            <li className={style.VehicleDetailsListItem}>
+              <h3>Width</h3>
+              <p>{truck.width}</p>
+            </li>
+            <li className={style.VehicleDetailsListItem}>
+              <h3>Height</h3>
+              <p>{truck.height}</p>
+            </li>
+            <li className={style.VehicleDetailsListItem}>
+              <h3>Tank</h3>
+              <p>{truck.tank}</p>
+            </li>
+            <li className={style.VehicleDetailsListItem}>
+              <h3>Consumption</h3>
+              <p>{truck.consumption}</p>
+            </li>
+            <li className={style.VehicleDetailsListItem}>
+              <h3>Transmission</h3>
+              <p>{truck.transmission}</p>
+            </li>
+            <li className={style.VehicleDetailsListItem}>
+              <h3>Engine</h3>
+              <p>{truck.engine}</p>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

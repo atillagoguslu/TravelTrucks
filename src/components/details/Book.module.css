@@ -6,7 +6,7 @@
   border-radius: 10px;
   padding: 44px;
   width: calc(641px - 44px * 2);
-  height: calc(626px - 44px * 2);
+  height: calc(600px - 44px * 2);
 }
 
 .header {

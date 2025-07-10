@@ -12,7 +12,7 @@ const Book = () => {
         <h2>Book your campervan now</h2>
         <p>Stay connected! We are always ready to help you.</p>
       </div>
-      <div className={style.form}>
+      <form className={style.form}>
         <input type="text" placeholder="Name*" />
         <input type="email" placeholder="Email*" />
         <DatePicker
@@ -25,7 +25,7 @@ const Book = () => {
           formatWeekDay={name => name.slice(0, 3)}
         />
         <textarea placeholder="Comment" />
-      </div>
+      </form>
       <div className={style.sendButton}>
         <button>Send</button>
       </div>

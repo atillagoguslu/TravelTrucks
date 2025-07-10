@@ -1,7 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 60px;
   border-radius: 10px;
   padding: 44px 54px;
   background-color: var(--inputs);
@@ -46,7 +46,7 @@
   gap: 24px;
 }
 
-.VehicleDetailsTitle h3 {
+.VehicleDetailsTitle h2 {
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 18px;
@@ -65,6 +65,15 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.VehicleDetailsList ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .VehicleDetailsListItem {

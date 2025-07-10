@@ -28,7 +28,7 @@ const Truck = ({ truck }) => {
   const favourites = useSelector(selectFavouritedIds);
   const isFavourite = (id) => favourites.includes(id);
 
-  const descriptionLimit = 61;
+  const descriptionLimit = 61; // Bu ayar yazıyı Inter tipinde güzel limitliyor.
   const shortDescription =
     truck.description.length > descriptionLimit
       ? truck.description.slice(0, descriptionLimit) + '...'
@@ -86,19 +86,13 @@ const Truck = ({ truck }) => {
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log(
-                      'In Truck.jsx - favorite state:',
-                      isFavourite(truck.id),
-                      'truck.id:',
-                      truck.id,
-                    );
                     handleFavorite(truck.id);
                   }}
                 >
                   {isFavourite(truck.id) ? (
-                    <img src={favOrangeIcon} alt="Not favorited" />
+                    <img src={favOrangeIcon} alt="Favorited" />
                   ) : (
-                    <img src={favBlackIcon} alt="Favorited" />
+                    <img src={favBlackIcon} alt="Not favorited" />
                   )}
                 </button>
               </div>

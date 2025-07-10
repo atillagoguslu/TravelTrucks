@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <div className="container">
-        <div className="header">
+        <header className="header">
           <div className="logo">
             <img src={logo} alt="logo" />
           </div>
@@ -37,7 +37,7 @@ function App() {
               Catalog
             </NavLink>
           </div>
-        </div>
+        </header>
         <Outlet />
       </div>
     </>
