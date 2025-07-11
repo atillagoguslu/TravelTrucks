@@ -27,7 +27,7 @@ const CatalogPage = () => {
 
   if (isLoadingFilters) {
     return (
-      <div className={style.container}>
+      <div className={style.containerCatalog}>
         <CatalogFilters />
         <div className={style.loading}>
           <Loader />
@@ -38,7 +38,7 @@ const CatalogPage = () => {
 
   if (error) {
     return (
-      <div className={style.container}>
+      <div className={style.containerCatalog}>
         <CatalogFilters />
         <div className={style.error}>
           <p>Error: {error}</p>
@@ -49,7 +49,7 @@ const CatalogPage = () => {
   }
 
   return (
-    <div className={style.container}>
+    <div className={style.containerCatalog}>
       <CatalogFilters />
       <TrucksList />
     </div>

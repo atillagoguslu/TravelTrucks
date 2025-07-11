@@ -46,3 +46,27 @@
 .active {
   color: var(--button-hover);
 }
+
+@media (max-width: 640px) {
+  .container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header {
+    padding: 16px 24px;
+    width: 100%;
+  }
+
+  .logo {
+    width: 136px;
+  }
+
+  .nav {
+    margin-left: 16px;
+    width: 100%;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-right: 24px;
+  }
+}

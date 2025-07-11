@@ -1,4 +1,4 @@
-.container {
+.containerTrucksList {
   width: 888px;
   min-height: 200px;
   background-color: var(--white);
@@ -39,4 +39,20 @@
   color: var(--main);
 
   text-wrap: nowrap;
+}
+
+@media (max-width: 640px) {
+  .containerTrucksList {
+    width: 100%;
+    padding: 16px 16px;
+  }
+  .trucksList {
+    gap: 16px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .trucksListPagination {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
 }

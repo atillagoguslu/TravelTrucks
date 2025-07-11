@@ -1,4 +1,4 @@
-.container {
+.containerCatalog {
   max-width: 1440px;
   background-color: var(--white);
   display: flex;
@@ -32,4 +32,9 @@
   cursor: pointer;
 }
 
-
+@media (max-width: 640px) {
+  .containerCatalog {
+    width: 100%;
+    flex-direction: column;
+  }
+}

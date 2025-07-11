@@ -1,4 +1,4 @@
-.container {
+.containerFilters {
   display: flex;
   flex-direction: column;
   background: white;
@@ -169,4 +169,41 @@
 .searchButton:disabled {
   background: var(--gray);
   cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .containerFilters {
+    padding: 16px 16px;
+    width: 100%;
+  }
+  .filtersSection {
+    margin-top: 16px;
+  }
+  .locationInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--inputs);
+    border-radius: 12px;
+    padding: 18px 20px 18px 20px;
+    width: 100%;
+    height: 20px;
+  }
+  .filterGroup {
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .groupMiddleLine {
+    width: 100%;
+    height: 3px;
+  }
+  .optionsGrid {
+    gap: 12px;
+  }
+  .containerFilters button {
+    align-self: center;
+  }
+  .searchButton {
+    margin-top: 16px;
+  }
 }

@@ -157,3 +157,30 @@
 .active::after {
   width: 100%;
 }
+
+@media (max-width: 640px) {
+  .detailsPageContainer {
+    gap: 16px;
+    padding: 16px 16px;
+    width: 100%;
+  }
+
+  .detailsPagePictures {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .detailsPagePictures img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .detailsPageFeaturesAndReviewsHeader {
+    margin-top: 12px;
+  }
+
+  .detailsPageFeaturesAndReviews {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

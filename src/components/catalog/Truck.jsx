@@ -71,7 +71,7 @@ const Truck = ({ truck }) => {
   };
 
   return (
-    <div className={style.container}>
+    <div className={style.containerTruck}>
       <div className={style.truckLayout}>
         <div className={style.truckImage}>
           <img src={truck.gallery[0].thumb} alt={truck.name} />

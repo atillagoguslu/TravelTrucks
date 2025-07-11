@@ -73,7 +73,7 @@ const CatalogFilters = () => {
   };
 
   return (
-    <div className={style.container}>
+    <div className={style.containerFilters}>
       <div className={style.locationSection}>
         <label className={style.locationLabel}>Location</label>
         <div className={style.locationInput}>

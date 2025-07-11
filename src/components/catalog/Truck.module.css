@@ -1,4 +1,4 @@
-.container {
+.containerTruck {
   border: 1px solid var(--gray-light);
   border-radius: 20px;
   padding: 24px;
@@ -183,4 +183,27 @@
   color: var(--white);
   text-align: center;
   text-wrap: nowrap;
+}
+
+@media (max-width: 640px) {
+  .containerTruck {
+    width: 100%;
+    height: 100%;
+    padding: 16px 16px;
+  }
+  .truckLayout {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .truckImage {
+    width: 100%;
+    height: 100%;
+  }
+  .truckInfo {
+    gap: 16px;
+  }
+  .truckInfoHeaderUpper {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
