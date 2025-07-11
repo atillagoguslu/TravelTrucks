@@ -56,6 +56,7 @@ npm run dev
 ### Available Scripts
 
 - `npm run dev` - Start development server
+- `npm run dev:host` - Start development server accessible on your local network
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 
