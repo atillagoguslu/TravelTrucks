@@ -46,3 +46,52 @@
 .active {
   color: var(--button-hover);
 }
+
+@media (max-width: 640px) {
+  .container {
+    width: 100%;
+    min-height: 500px;
+    margin: 0 auto;
+    background-color: var(--white);
+    box-sizing: border-box;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: var(--inputs);
+  
+    border-bottom: 1px solid var(--badges);
+    padding: 16px 24px;
+    width: 100%;
+  
+    font-family: var(--font-family);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    text-align: center;
+    color: var(--main);
+  }
+  
+  .logo {
+    width: 136px;
+  }
+  
+  .nav {
+    margin-left: 16px;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-right: 24px;
+  }
+  
+  .links {
+    text-decoration: none;
+    color: var(--main);
+  }
+  
+  .active {
+    color: var(--button-hover);
+  }
+}

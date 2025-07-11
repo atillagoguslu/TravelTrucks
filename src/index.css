@@ -35,3 +35,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 640px) {
+  * {
+    box-sizing: border-box;
+  }
+}
