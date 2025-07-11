@@ -24,7 +24,7 @@ const TrucksList = () => {
   };
 
   return (
-    <div className={style.container}>
+    <div className={style.containerTrucksList}>
       {isLoadingTrucks && <Loader />}
       <div className={style.trucksList}>
         {trucks.map((truck) => (
