@@ -35,7 +35,7 @@ const Features = ({ truck: propTruck }) => {
   const featuresList = featuresData.filter(({ key }) => Boolean(truck[key]));
 
   return (
-    <div className={style.container}>
+    <div className={style.containerFeatures}>
       <div className={style.categories}>
         {featuresList.map(({ key, icon, label }) => (
           <div key={key} className={style.category}>

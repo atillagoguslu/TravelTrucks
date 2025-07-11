@@ -7,7 +7,7 @@ import './DatePickerCustom.css';
 const Book = () => {
   const [startDate, setStartDate] = useState(null);
   return (
-    <div className={style.container}>
+    <div className={style.containerBook}>
       <div className={style.header}>
         <h2>Book your campervan now</h2>
         <p>Stay connected! We are always ready to help you.</p>
@@ -22,7 +22,7 @@ const Book = () => {
           dateFormat="dd/MM/yyyy"
           className={style.dateInput}
           calendarStartDay={1}
-          formatWeekDay={name => name.slice(0, 3)}
+          formatWeekDay={(name) => name.slice(0, 3)}
         />
         <textarea placeholder="Comment" />
       </form>
